@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CJCS Timecard</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: #eee;
+    display: flex;
+    height: 100vh;
+  }
+  .hidden { display: none; }
+  #login-screen {
+    margin: auto;
+    background: #222;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  input, button, textarea {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    border: none;
+  }
+  button {
+    background: #3a6;
+    color: #fff;
+    cursor: pointer;
+  }
+  .sidebar {
+    width: 200px;
+    background: linear-gradient(180deg, #222, #000);
+    padding: 1rem;
+  }
+  .sidebar a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin: 1rem 0;
+  }
+  .sidebar a:hover {
+    color: #fff;
+  }
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+  }
+  .card {
+    background: #1c1c1c;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #333;
+    padding: 0.5rem;
+    text-align: left;
+  }
+  th {
+    background: #333;
+  }
+  .danger {
+    background: #600;
+  }
+  .danger button {
+    background: #a00;
+  }
+  .status {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+</style>
+</head>
+<body>
+<div id="login-screen">
+  <h2>Login</h2>
+  <input id="username" placeholder="Username" /><br />
+  <input id="password" type="password" placeholder="Password" /><br />
+  <button onclick="login()">Login</button>
+  <p id="login-error" style="color:#f66"></p>
+</div>
+
+<div id="app" class="hidden">
+  <div class="sidebar">
+    <h2>CJCS</h2>
+    <a href="#">Timecard</a>
+    <a href="#">Handbook</a>
+    <a href="#">IT Helpdesk</a>
+    <a href="#">Benefits</a>
+  </div>
+  <div class="content">
+    <div class="card" id="status-card">
+      <div class="status">Status: <span id="status">Clocked out</span></div>
+      <div>Timer: <span id="timer">00:00:00</span></div>
+      <div>Earnings: $<span id="earnings">0.00</span></div>
+      <button id="clockBtn" onclick="toggleClock()">Clock In</button>
+    </div>
+    <div class="card" id="notes-card">
+      <h3>Notes</h3>
+      <textarea id="notes" rows="5" placeholder="What are you working on?"></textarea>
+    </div>
+    <div class="card" id="log-card" style="grid-column: span 2;">
+      <h3>Session Log</h3>
+      <button onclick="exportCSV()">Export CSV</button>
+      <button onclick="exportJSON()">Export JSON</button>
+      <button onclick="document.getElementById('importFile').click()">Import JSON</button>
+      <input type="file" id="importFile" accept="application/json" style="display:none" />
+      <table id="sessionTable">
+        <thead>
+          <tr><th>Date</th><th>Start</th><th>End</th><th>Duration</th><th>Earnings</th><th>Notes</th><th>Delete</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="card danger" id="danger-card">
+      <h3>Danger Zone</h3>
+      <button onclick="resetData()">Reset Data</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const HOURLY_RATE_CENTS = 3600; // $36/hr
+const STORAGE_TOTAL = 'totalEarnedCents';
+const STORAGE_SESSIONS = 'sessions';
+const STORAGE_CURRENT = 'currentSession';
+let timerInterval = null;
+
+function login() {
+  const u = document.getElementById('username').value;
+  const p = document.getElementById('password').value;
+  if (u === 'jmeintel' && p === 'password') {
+    document.getElementById('login-screen').classList.add('hidden');
+    document.getElementById('app').classList.remove('hidden');
+    loadData();
+  } else {
+    document.getElementById('login-error').textContent = 'Invalid credentials';
+  }
+}
+
+function loadData() {
+  renderSessions();
+  updateStatus();
+  const current = JSON.parse(localStorage.getItem(STORAGE_CURRENT));
+  if (current) {
+    document.getElementById('notes').value = current.notes || '';
+    startTimer(current.start);
+  }
+}
+
+function toggleClock() {
+  const current = JSON.parse(localStorage.getItem(STORAGE_CURRENT));
+  if (current) {
+    clockOut();
+  } else {
+    clockIn();
+  }
+}
+
+function clockIn() {
+  const start = Date.now();
+  const notes = document.getElementById('notes').value;
+  const session = { start, notes };
+  localStorage.setItem(STORAGE_CURRENT, JSON.stringify(session));
+  startTimer(start);
+  updateStatus();
+}
+
+function clockOut() {
+  const current = JSON.parse(localStorage.getItem(STORAGE_CURRENT));
+  if (!current) return;
+  const end = Date.now();
+  const notes = document.getElementById('notes').value;
+  const durationMs = end - current.start;
+  const earnedCents = Math.round(durationMs * (HOURLY_RATE_CENTS / (60*60*1000)));
+  let sessions = JSON.parse(localStorage.getItem(STORAGE_SESSIONS) || '[]');
+  sessions.push({ start: current.start, end, durationMs, earnedCents, notes });
+  localStorage.setItem(STORAGE_SESSIONS, JSON.stringify(sessions));
+  let total = parseInt(localStorage.getItem(STORAGE_TOTAL) || '0');
+  total += earnedCents;
+  localStorage.setItem(STORAGE_TOTAL, total);
+  localStorage.removeItem(STORAGE_CURRENT);
+  stopTimer();
+  document.getElementById('notes').value = '';
+  renderSessions();
+  updateStatus();
+}
+
+function startTimer(start) {
+  stopTimer();
+  timerInterval = setInterval(() => updateTimerDisplay(start), 1000);
+  updateTimerDisplay(start);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+  document.getElementById('timer').textContent = '00:00:00';
+  document.getElementById('earnings').textContent = '0.00';
+}
+
+function updateTimerDisplay(start) {
+  const now = Date.now();
+  const diff = now - start;
+  const hours = Math.floor(diff / 3600000);
+  const minutes = Math.floor((diff % 3600000) / 60000);
+  const seconds = Math.floor((diff % 60000) / 1000);
+  document.getElementById('timer').textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  const earnedCents = diff * (HOURLY_RATE_CENTS / (60*60*1000));
+  document.getElementById('earnings').textContent = (earnedCents/100).toFixed(2);
+}
+
+function pad(n) { return n.toString().padStart(2,'0'); }
+
+function updateStatus() {
+  const current = JSON.parse(localStorage.getItem(STORAGE_CURRENT));
+  const status = document.getElementById('status');
+  const btn = document.getElementById('clockBtn');
+  if (current) {
+    status.textContent = 'Clocked in';
+    btn.textContent = 'Clock Out';
+  } else {
+    status.textContent = 'Clocked out';
+    btn.textContent = 'Clock In';
+  }
+}
+
+function renderSessions() {
+  let sessions = JSON.parse(localStorage.getItem(STORAGE_SESSIONS) || '[]');
+  sessions.sort((a,b) => b.start - a.start);
+  const tbody = document.querySelector('#sessionTable tbody');
+  tbody.innerHTML = '';
+  sessions.forEach((s, idx) => {
+    const tr = document.createElement('tr');
+    const start = new Date(s.start);
+    const end = new Date(s.end);
+    tr.innerHTML = `<td>${start.toLocaleDateString()}</td>` +
+                   `<td>${start.toLocaleTimeString()}</td>` +
+                   `<td>${end.toLocaleTimeString()}</td>` +
+                   `<td>${formatDuration(s.durationMs)}</td>` +
+                   `<td>$${(s.earnedCents/100).toFixed(2)}</td>` +
+                   `<td><input data-idx="${idx}" value="${s.notes || ''}" onchange="updateNote(this)"/></td>` +
+                   `<td><button onclick="deleteSession(${idx})">Delete</button></td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function updateNote(input) {
+  let sessions = JSON.parse(localStorage.getItem(STORAGE_SESSIONS) || '[]');
+  const idx = parseInt(input.getAttribute('data-idx'));
+  sessions[idx].notes = input.value;
+  localStorage.setItem(STORAGE_SESSIONS, JSON.stringify(sessions));
+}
+
+function deleteSession(idx) {
+  let sessions = JSON.parse(localStorage.getItem(STORAGE_SESSIONS) || '[]');
+  sessions.splice(idx,1);
+  localStorage.setItem(STORAGE_SESSIONS, JSON.stringify(sessions));
+  renderSessions();
+}
+
+function formatDuration(ms) {
+  const hours = Math.floor(ms / 3600000);
+  const minutes = Math.floor((ms % 3600000) / 60000);
+  const seconds = Math.floor((ms % 60000) / 1000);
+  return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+}
+
+function exportCSV() {
+  let sessions = JSON.parse(localStorage.getItem(STORAGE_SESSIONS) || '[]');
+  const header = 'Date,Start,End,Duration,Earnings,Notes\n';
+  const rows = sessions.map(s => {
+    const start = new Date(s.start);
+    const end = new Date(s.end);
+    return `${start.toISOString().split('T')[0]},${start.toLocaleTimeString()},${end.toLocaleTimeString()},${formatDuration(s.durationMs)},${(s.earnedCents/100).toFixed(2)},"${(s.notes||'').replace(/"/g,'""')}"`;
+  }).join('\n');
+  download('timecard_sessions.csv', header + rows);
+}
+
+function exportJSON() {
+  const data = {
+    totalEarnedCents: parseInt(localStorage.getItem(STORAGE_TOTAL) || '0'),
+    sessions: JSON.parse(localStorage.getItem(STORAGE_SESSIONS) || '[]'),
+    currentSession: JSON.parse(localStorage.getItem(STORAGE_CURRENT) || 'null')
+  };
+  const ts = new Date().toISOString().replace(/[:.]/g,'-');
+  download(`timecard_backup_${ts}.json`, JSON.stringify(data, null, 2));
+}
+
+function download(filename, text) {
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('importFile').addEventListener('change', evt => {
+  const file = evt.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (!('sessions' in data) || !Array.isArray(data.sessions)) throw new Error('Invalid');
+      localStorage.setItem(STORAGE_TOTAL, data.totalEarnedCents || '0');
+      localStorage.setItem(STORAGE_SESSIONS, JSON.stringify(data.sessions));
+      if (data.currentSession) {
+        localStorage.setItem(STORAGE_CURRENT, JSON.stringify(data.currentSession));
+      } else {
+        localStorage.removeItem(STORAGE_CURRENT);
+      }
+      renderSessions();
+      updateStatus();
+    } catch(err) {
+      alert('Invalid JSON');
+    }
+  };
+  reader.readAsText(file);
+});
+
+function resetData() {
+  if (confirm('This will delete all timecard data. Continue?')) {
+    localStorage.removeItem(STORAGE_TOTAL);
+    localStorage.removeItem(STORAGE_SESSIONS);
+    localStorage.removeItem(STORAGE_CURRENT);
+    renderSessions();
+    updateStatus();
+    stopTimer();
+    document.getElementById('notes').value = '';
+  }
+}
+</script>
+</body>
+</html>

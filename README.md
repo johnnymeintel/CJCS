@@ -2,6 +2,8 @@
 
 Cookie Jar Cloud Solutions
 
+Open `timecard.html` in a browser to use the app. The remainder of this document outlines its features and build steps.
+
 ## CJCS Timecard App – Build Instructions
 
 **Goal**: A lightweight intranet-style web app that lets me log in, clock in/out at $36/hr, track total earnings across sessions, log tasks, and trick my subconscious into feeling like a Junior SOC Analyst.

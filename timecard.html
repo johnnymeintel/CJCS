@@ -2,15 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>CJCS Timecard</title>
+<title>Cookie Jar Cloud Solutions Timecard</title>
 <style>
   body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #111;
     color: #eee;
     display: flex;
     height: 100vh;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+      linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: 20px 20px, 20px 20px, cover;
   }
   .hidden { display: none; }
   #login-screen {
@@ -32,9 +36,20 @@
     cursor: pointer;
   }
   .sidebar {
-    width: 200px;
+    width: 220px;
     background: linear-gradient(180deg, #222, #000);
     padding: 1rem;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .logo svg { width: 32px; height: 32px; }
+  .sidebar h2 {
+    font-size: 1rem;
+    margin: 0;
   }
   .sidebar a {
     display: block;
@@ -94,7 +109,18 @@
 
 <div id="app" class="hidden">
   <div class="sidebar">
-    <h2>CJCS</h2>
+    <div class="logo">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" fill="#d2b48c"/>
+        <circle cx="35" cy="40" r="7" fill="#6b4f3b"/>
+        <circle cx="60" cy="60" r="7" fill="#6b4f3b"/>
+        <circle cx="45" cy="70" r="5" fill="#6b4f3b"/>
+        <circle cx="85" cy="25" r="10" fill="#000"/>
+        <circle cx="75" cy="15" r="8" fill="#000"/>
+        <circle cx="70" cy="30" r="8" fill="#000"/>
+      </svg>
+      <h2>Cookie Jar Cloud Solutions</h2>
+    </div>
     <a href="#">Timecard</a>
     <a href="#">Handbook</a>
     <a href="#">IT Helpdesk</a>
@@ -229,7 +255,7 @@ function updateStatus() {
   const status = document.getElementById('status');
   const btn = document.getElementById('clockBtn');
   if (current) {
-    status.textContent = 'Clocked in';
+    status.textContent = 'Clocked in as SOC ANALYST I';
     btn.textContent = 'Clock Out';
   } else {
     status.textContent = 'Clocked out';

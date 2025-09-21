@@ -64,7 +64,7 @@ Cookie Jar Cloud Solutions is a simulated mid-market restaurant SaaS company ($1
 ## Repository Structure
 
 ```
-cjcs-lab/
+cjcs/
 ├── docs/
 │   ├── business-context/          # Company background and threat landscape
 │   ├── architecture/              # Network diagrams and system specifications  

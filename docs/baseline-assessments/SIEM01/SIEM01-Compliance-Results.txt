@@ -1,0 +1,14 @@
+-rw-r--r-- 1 root root    919 Sep 20 12:59 /etc/group
+-rw-r--r-- 1 root root   2016 Sep 19 07:51 /etc/passwd
+-rw-r----- 1 root shadow 1070 Sep 19 07:51 /etc/shadow
+Defaults	env_reset
+Defaults	mail_badpass
+Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+Defaults	use_pty
+root	ALL=(ALL:ALL) ALL
+%admin ALL=(ALL) ALL
+%sudo	ALL=(ALL:ALL) ALL
+@includedir /etc/sudoers.d
+-rw-r--r-- 1 root root 1136 Aug  5 17:14 /etc/crontab
+-rw-r--r-- 1 root root  657 Sep 19 06:53 /etc/fstab
+-rw-r--r-- 1 root root 3517 Jun  9 17:22 /etc/ssh/sshd_config

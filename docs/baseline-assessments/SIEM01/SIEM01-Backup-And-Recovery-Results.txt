@@ -1,0 +1,4 @@
+/usr/bin/rsync
+/usr/bin/tar
+/usr/bin/gzip
+/etc/cron.daily/dpkg:8:/usr/libexec/dpkg/dpkg-db-backup

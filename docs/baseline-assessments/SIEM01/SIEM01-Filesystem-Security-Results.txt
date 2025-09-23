@@ -1,0 +1,41 @@
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=4025692k,nr_inodes=1006423,mode=755,inode64)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,noexec,relatime,size=813200k,mode=755,inode64)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,inode64)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k,inode64)
+cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,nosuid,nodev,relatime,pagesize=2M)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,nosuid,nodev,noexec,relatime)
+configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,nosuid,nodev,noexec,relatime)
+CJCS on /media/sf_CJCS type vboxsf (rw,nodev,relatime,iocharset=utf8,uid=0,gid=988,dmode=0770,fmode=0770,tag=VBoxAutomounter)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=813196k,nr_inodes=203299,mode=700,uid=1000,gid=1000,inode64)
+/usr/bin/su
+/usr/bin/chsh
+/usr/bin/mount
+/usr/bin/gpasswd
+/usr/bin/ssh-agent
+/usr/bin/chfn
+/usr/bin/fusermount3
+/usr/bin/umount
+/usr/bin/sudo
+/usr/bin/expiry
+/usr/bin/crontab
+/usr/bin/passwd
+/usr/bin/chage
+/usr/bin/newgrp
+/usr/sbin/unix_chkpwd
+/usr/sbin/pam_extrausers_chkpwd
+drwxr-xr-x 113 root root   4096 Sep 21 05:22 /etc
+drwxr-xr-x   3 root root   4096 Sep 19 06:55 /home
+drwx------   5 root root   4096 Sep 19 08:05 /root
+drwxrwxrwt  13 root root   4096 Sep 22 06:47 /tmp
+drwxrwxr-x  12 root syslog 4096 Sep 22 05:47 /var/log

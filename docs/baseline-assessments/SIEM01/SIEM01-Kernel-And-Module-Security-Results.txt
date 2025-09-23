@@ -1,0 +1,46 @@
+Module                  Size  Used by
+nf_tables             376832  0
+tcp_diag               12288  0
+udp_diag               12288  0
+inet_diag              28672  2 tcp_diag,udp_diag
+vboxsf                 98304  1
+qrtr                   53248  2
+cfg80211             1355776  0
+binfmt_misc            24576  1
+intel_rapl_msr         20480  0
+intel_rapl_common      40960  1 intel_rapl_msr
+intel_uncore_frequency_common    16384  0
+intel_pmc_core        118784  0
+intel_vsec             20480  1 intel_pmc_core
+snd_intel8x0           53248  0
+snd_ac97_codec        196608  1 snd_intel8x0
+pmt_telemetry          16384  1 intel_pmc_core
+pmt_class              12288  1 pmt_telemetry
+ac97_bus               12288  1 snd_ac97_codec
+snd_pcm               192512  2 snd_intel8x0,snd_ac97_codec
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase bmi1 avx2 bmi2 invpcid rdseed adx clflushopt sha_ni arat md_clear flush_l1d arch_capabilities
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase bmi1 avx2 bmi2 invpcid rdseed adx clflushopt sha_ni arat md_clear flush_l1d arch_capabilities
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase bmi1 avx2 bmi2 invpcid rdseed adx clflushopt sha_ni arat md_clear flush_l1d arch_capabilities
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase bmi1 avx2 bmi2 invpcid rdseed adx clflushopt sha_ni arat md_clear flush_l1d arch_capabilities
+2
+1
+[    3.964946] 17:35:44.069133 main     vbglR3GuestCtrlDetectPeekGetCancelSupport: Supported (#1)
+[    3.975728] vboxsf: g_fHostFeatures=0x8000000f g_fSfFeatures=0x1 g_uSfLastFunction=29
+[    3.975778] vboxsf: Successfully loaded version 7.2.0 r170228
+[    3.975795] vboxsf: Successfully loaded version 7.2.0 r170228 on 6.8.0-84-generic (LINUX_VERSION_CODE=0x6080c)
+[    3.976533] 17:35:44.080722 automount vbsvcAutomounterMountIt: Successfully mounted 'CJCS' on '/media/sf_CJCS'
+[   13.367565] loop0: detected capacity change from 0 to 8
+[   13.464305] kauditd_printk_skb: 113 callbacks suppressed
+[   13.464308] audit: type=1400 audit(1758648953.572:124): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/usr/lib/snapd/snap-confine" pid=1990 comm="apparmor_parser"
+[   13.464813] audit: type=1400 audit(1758648953.572:125): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=1990 comm="apparmor_parser"
+[   14.563972] systemd-journald[343]: /var/log/journal/6df0f6c7b62748a8a615ac13aa498ace/user-1000.journal: Journal file uses a different sequence number ID, rotating.
+[  920.633358] audit: type=1400 audit(1758649860.947:126): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/__init__.cpython-312.pyc.140295529477936" pid=4559 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[  920.639659] audit: type=1400 audit(1758649860.954:127): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/apt.cpython-312.pyc.140295529651696" pid=4559 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[  920.645206] audit: type=1400 audit(1758649860.959:128): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/__init__.cpython-312.pyc.138048587566512" pid=4560 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[  920.647162] audit: type=1400 audit(1758649860.961:129): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/log.cpython-312.pyc.138048589117824" pid=4560 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[  920.655675] audit: type=1400 audit(1758649860.970:130): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/defaults.cpython-312.pyc.138048586455088" pid=4560 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[  920.656800] audit: type=1400 audit(1758649860.971:131): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/secret_manager.cpython-312.pyc.138048586455088" pid=4560 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[  920.661889] audit: type=1400 audit(1758649860.976:132): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/system.cpython-312.pyc.138048586457136" pid=4560 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[  920.672035] audit: type=1400 audit(1758649860.986:133): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_esm_cache" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/exceptions.cpython-312.pyc.138048586903088" pid=4560 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[  920.680560] audit: type=1400 audit(1758649860.995:134): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/event_logger.cpython-312.pyc.140295524685488" pid=4559 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0
+[  920.682670] audit: type=1400 audit(1758649860.997:135): apparmor="DENIED" operation="mknod" class="file" profile="ubuntu_pro_apt_news" name="/usr/lib/python3/dist-packages/uaclient/__pycache__/yaml.cpython-312.pyc.140295514081456" pid=4559 comm="python3" requested_mask="c" denied_mask="c" fsuid=0 ouid=0

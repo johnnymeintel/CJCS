@@ -1,0 +1,18 @@
+active
+wazuh-d+     750  0.2  2.5 11554512 210808 ?     Ssl  05:47   0:11 /usr/share/wazuh-dashboard/node/bin/node --no-warnings --max-http-header-size=65536 --unhandled-rejections=warn /usr/share/wazuh-dashboard/src/cli/dist
+wazuh-i+    1134  1.9 18.6 4990384 1520532 ?     Ssl  05:47   1:20 /usr/share/wazuh-indexer/jdk/bin/java -Xshare:auto -Dopensearch.networkaddress.cache.ttl=60 -Dopensearch.networkaddress.cache.negative.ttl=10 -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -XX:+ShowCodeDetailsInExceptionMessages -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dio.netty.allocator.numDirectArenas=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Djava.security.manager=allow -Djava.locale.providers=SPI,COMPAT -Xms1024m -Xmx1024m -XX:+UseG1GC -XX:G1ReservePercent=25 -XX:InitiatingHeapOccupancyPercent=30 -Djava.io.tmpdir=/tmp/opensearch-4619383629217527409 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/lib/wazuh-indexer -XX:ErrorFile=/var/log/wazuh-indexer/hs_err_pid%p.log -Xlog:gc*,gc+age=trace,safepoint:file=/var/log/wazuh-indexer/gc.log:utctime,pid,tags:filecount=32,filesize=64m -Djava.security.manager=allow --add-modules=jdk.incubator.vector -Djava.util.concurrent.ForkJoinPool.common.threadFactory=org.opensearch.secure_sm.SecuredForkJoinWorkerThreadFactory -Dclk.tck=100 -Djdk.attach.allowAttachSelf=true -Djava.security.policy=file:///etc/wazuh-indexer/opensearch-performance-analyzer/opensearch_security.policy --add-opens=jdk.attach/sun.tools.attach=ALL-UNNAMED -XX:MaxDirectMemorySize=536870912 -Dopensearch.path.home=/usr/share/wazuh-indexer -Dopensearch.path.conf=/etc/wazuh-indexer -Dopensearch.distribution.type=deb -Dopensearch.bundled_jdk=true -cp /usr/share/wazuh-indexer/lib/* org.opensearch.bootstrap.OpenSearch -p /run/wazuh-indexer/wazuh-indexer.pid --quiet
+wazuh       1422  0.2  1.3 867460 113808 ?       Sl   05:47   0:10 /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+wazuh       1423  0.0  0.8 150000 69264 ?        S    05:47   0:00 /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+wazuh       1424  0.0  0.8 149888 69384 ?        S    05:47   0:00 /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+wazuh       1427  0.0  0.8 231732 69024 ?        S    05:47   0:00 /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+wazuh       1430  0.0  0.7 441508 60784 ?        S    05:47   0:00 /var/ossec/framework/python/bin/python3 /var/ossec/api/scripts/wazuh_apid.py
+root        1472  0.0  0.0 108128  7916 ?        Sl   05:47   0:00 /var/ossec/bin/wazuh-authd
+wazuh       1488  0.1  0.2 1216364 18720 ?       Sl   05:47   0:04 /var/ossec/bin/wazuh-db
+root        1521  0.0  0.0  25912  3928 ?        Sl   05:47   0:00 /var/ossec/bin/wazuh-execd
+wazuh       1532  0.0  0.3 2344680 31084 ?       Sl   05:47   0:01 /var/ossec/bin/wazuh-analysisd
+root        1597  0.2  0.1 346948 13672 ?        SNl  05:47   0:08 /var/ossec/bin/wazuh-syscheckd
+wazuh       1620  0.0  0.1 766460 10436 ?        Sl   05:47   0:03 /var/ossec/bin/wazuh-remoted
+root        1659  0.0  0.1 660380 14496 ?        Sl   05:47   0:00 /var/ossec/bin/wazuh-logcollector
+wazuh       1678  0.0  0.0  25984  4324 ?        Sl   05:47   0:00 /var/ossec/bin/wazuh-monitord
+root        1737  0.1  0.7 995420 59660 ?        Sl   05:47   0:06 /var/ossec/bin/wazuh-modulesd
+jmeintel    5463  0.0  0.0   6544  2304 tty1     S+   06:56   0:00 grep -E (wazuh|ossec)

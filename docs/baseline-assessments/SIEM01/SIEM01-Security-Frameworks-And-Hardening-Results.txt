@@ -1,0 +1,5 @@
+apparmor module is loaded.
+AppArmor not configured
+SELinux not installed (normal on Ubuntu)
+inactive
+fail2ban not installed

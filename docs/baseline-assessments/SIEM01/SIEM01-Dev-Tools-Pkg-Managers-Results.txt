@@ -1,0 +1,8 @@
+/usr/bin/gcc
+/usr/bin/g++
+/usr/bin/make
+/usr/bin/python3
+/usr/bin/perl
+/usr/bin/apt
+/usr/bin/dpkg
+/usr/bin/snap

@@ -1,0 +1,30 @@
+root:x:0:0:root:/root:/bin/bash
+jmeintel:x:1000:1000:Johnny Meintel:/home/jmeintel:/bin/bash
+sudo: jmeintel
+root: 
+#	PASS_MAX_DAYS	Maximum number of days a password may be used.
+#	PASS_MIN_DAYS	Minimum number of days allowed between password changes.
+#	PASS_WARN_AGE	Number of days warning given before a password expires.
+PASS_MAX_DAYS	99999
+PASS_MIN_DAYS	0
+PASS_WARN_AGE	7
+Username         Port     From                                       Latest
+root                                                                **Never logged in**
+daemon                                                              **Never logged in**
+bin                                                                 **Never logged in**
+sys                                                                 **Never logged in**
+sync                                                                **Never logged in**
+games                                                               **Never logged in**
+man                                                                 **Never logged in**
+lp                                                                  **Never logged in**
+mail                                                                **Never logged in**
+news                                                                **Never logged in**
+uucp                                                                **Never logged in**
+proxy                                                               **Never logged in**
+www-data                                                            **Never logged in**
+backup                                                              **Never logged in**
+list                                                                **Never logged in**
+irc                                                                 **Never logged in**
+_apt                                                                **Never logged in**
+nobody                                                              **Never logged in**
+systemd-network                                                     **Never logged in**

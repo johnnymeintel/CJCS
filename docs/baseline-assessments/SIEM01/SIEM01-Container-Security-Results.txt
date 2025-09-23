@@ -1,0 +1,4 @@
+inactive
+Docker not installed
+Docker CLI not available
+No running containers

@@ -1,0 +1,2 @@
+which gcc g++ make python python3 perl ruby 2>/dev/null || true   # check presence of common compilers/interpreters
+which apt dpkg snap pip pip3 2>/dev/null || true                 # check presence of package managers and python package tools

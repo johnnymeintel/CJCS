@@ -1,0 +1,3 @@
+timedatectl status                                                                 # show system time, timezone, and sync state
+systemctl is-active systemd-timesyncd 2>/dev/null || systemctl is-active chrony 2>/dev/null   # check if NTP service (timesyncd or chrony) is active
+egrep '^(NTP=|FallbackNTP=)' /etc/systemd/timesyncd.conf 2>/dev/null               # list configured NTP and fallback servers

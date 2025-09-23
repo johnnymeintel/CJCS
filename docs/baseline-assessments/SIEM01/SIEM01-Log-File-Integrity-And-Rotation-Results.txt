@@ -1,0 +1,19 @@
+-rw-r----- 1 syslog adm  19201 Sep 22 06:55 /var/log/auth.log
+-rw-r----- 1 syslog adm 270243 Sep 22 06:47 /var/log/kern.log
+-rw-r----- 1 syslog adm 572403 Sep 22 06:55 /var/log/syslog
+weekly
+rotate 4
+module(load="imuxsock") # provides support for local system logging
+module(load="imklog" permitnonkernelfacility="on")
+$RepeatedMsgReduction on
+$FileOwner syslog
+$FileGroup adm
+$FileCreateMode 0640
+$DirCreateMode 0755
+$Umask 0022
+$PrivDropToUser syslog
+$PrivDropToGroup syslog
+$WorkDirectory /var/spool/rsyslog
+$IncludeConfig /etc/rsyslog.d/*.conf
+Filesystem                         Size  Used Avail Use% Mounted on
+/dev/mapper/ubuntu--vg-ubuntu--lv   58G   18G   38G  33% /

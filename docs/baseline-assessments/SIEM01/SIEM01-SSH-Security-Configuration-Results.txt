@@ -1,0 +1,10 @@
+inactive
+not-found
+total 8
+drwx------ 2 jmeintel jmeintel 4096 Sep 19 06:55 .
+drwxr-x--- 4 jmeintel jmeintel 4096 Sep 22 06:22 ..
+-rw------- 1 jmeintel jmeintel    0 Sep 19 06:55 authorized_keys
+jmeintel tty1         2025-09-22 05:47
+ 06:45:46 up 58 min,  1 user,  load average: 0.00, 0.01, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+jmeintel tty1     -                05:47    2.00s  0.29s   ?    w

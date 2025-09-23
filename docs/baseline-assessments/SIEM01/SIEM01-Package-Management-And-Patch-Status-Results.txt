@@ -1,0 +1,32 @@
+2025-09-19 07:44:07 install po-debconf:all <none> 1.0.21+nmu1
+2025-09-19 07:44:07 install debhelper:all <none> 13.14.1ubuntu5
+2025-09-19 07:44:08 install libarchive-cpio-perl:all <none> 0.10-3
+2025-09-19 07:44:08 install libltdl7:amd64 <none> 2.4.7-7build1
+2025-09-19 07:44:08 install libltdl-dev:amd64 <none> 2.4.7-7build1
+2025-09-19 07:44:08 install libsys-hostname-long-perl:all <none> 1.5-3
+2025-09-19 07:44:08 install libmail-sendmail-perl:all <none> 0.80-3
+2025-09-19 07:46:29 install wazuh-indexer:amd64 <none> 4.13.0-1
+2025-09-19 07:48:07 install wazuh-manager:amd64 <none> 4.13.0-1
+2025-09-19 07:49:17 install filebeat:amd64 <none> 7.10.2-1
+2025-09-19 07:51:00 install wazuh-dashboard:amd64 <none> 4.13.0-1
+2025-09-20 13:36:55 install linux-modules-6.8.0-83-generic:amd64 <none> 6.8.0-83.83
+2025-09-20 13:36:56 install linux-image-6.8.0-83-generic:amd64 <none> 6.8.0-83.83
+2025-09-20 13:36:56 install linux-modules-extra-6.8.0-83-generic:amd64 <none> 6.8.0-83.83
+2025-09-20 13:37:00 install linux-headers-6.8.0-83:all <none> 6.8.0-83.83
+2025-09-20 13:37:09 install linux-headers-6.8.0-83-generic:amd64 <none> 6.8.0-83.83
+2025-09-20 13:37:14 install linux-tools-6.8.0-83:amd64 <none> 6.8.0-83.83
+2025-09-20 13:37:14 install linux-tools-6.8.0-83-generic:amd64 <none> 6.8.0-83.83
+2025-09-21 06:11:47 install net-tools:amd64 <none> 2.10-0.1ubuntu4.4
+2025-09-21 16:01:23 install dos2unix:amd64 <none> 7.5.1-1
+# Ubuntu sources have moved to /etc/apt/sources.list.d/ubuntu.sources
+total 20
+drwxr-xr-x 2 root root 4096 Sep 19 07:44 .
+drwxr-xr-x 9 root root 4096 Sep 19 06:50 ..
+-rw-r--r-- 1 root root  386 Sep 19 06:50 ubuntu.sources
+-rw-r--r-- 1 root root 2552 Aug  5 17:02 ubuntu.sources.curtin.orig
+-rw-r--r-- 1 root root   94 Sep 19 07:44 wazuh.list
+Unattended-Upgrade::Allowed-Origins {
+//Unattended-Upgrade::Automatic-Reboot "false";
+// when Unattended-Upgrade::Automatic-Reboot is set to true
+//Unattended-Upgrade::Automatic-Reboot-WithUsers "true";
+//Unattended-Upgrade::Automatic-Reboot-Time "02:00";

@@ -80,4 +80,4 @@ Cybersecurity Professional | Seattle, WA
 🔗 [LinkedIn Profile](https://linkedin.com/in/johnnymeintel)
 
 ---
-*This project represents practical, hands-on experience with cybersecurity implementation in resource-constrained environments. All scenarios are based on real challenges faced by SMBs in their security maturity journey.*
+*This project represents practical, hands-on experience with cybersecurity implementation, all CJCS company data is entirely fictitious*

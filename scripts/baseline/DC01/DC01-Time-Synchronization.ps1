@@ -1,0 +1,2 @@
+w32tm /query /status # Gets Windows time sync status - critical for accurate log timestamps and Kerberos authentication
+w32tm /query /configuration # Gets time service configuration - ensures proper time sync for log correlation and forensic analysis

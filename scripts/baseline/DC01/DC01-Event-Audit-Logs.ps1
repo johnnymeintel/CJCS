@@ -1,0 +1,3 @@
+Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 50 | Select TimeCreated,Id,Message # Gets failed logon events - essential for brute force attack and credential stuffing detection
+Get-WinEvent -LogName "Directory Service" -MaxEvents 50 # Gets AD service events - monitors domain controller activities and potential AD compromise indicators
+Get-WinEvent -LogName "DNS Server" -MaxEvents 50 # Gets DNS server events - detects DNS tunneling, suspicious queries, and potential data exfiltration attempts

@@ -1,0 +1,4 @@
+Get-ADUser -Filter * | Select-Object Name,SamAccountName,Enabled,PasswordNeverExpires,LastLogonDate # Gets all AD users with key security attributes - baseline for dormant accounts and weak password policies
+Get-ADGroupMember -Identity "Domain Admins" # Lists Domain Admin members - critical for privileged access monitoring and unauthorized elevation detection
+Get-ADGroupMember -Identity "Enterprise Admins" # Lists Enterprise Admin members - monitors highest privilege level for potential compromise indicators
+Get-ADGroupMember -Identity "Schema Admins" # Lists Schema Admin members - tracks changes to AD schema permissions and potential persistence mechanisms

@@ -1,0 +1,2 @@
+Get-BitLockerVolume | Select-Object MountPoint,EncryptionMethod,VolumeStatus,ProtectionStatus   # report BitLocker status and protection state for each volume
+cipher /u                                                                               # report any files/folders encrypted with EFS under the current user profile

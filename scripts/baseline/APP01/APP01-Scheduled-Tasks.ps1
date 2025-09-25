@@ -1,0 +1,2 @@
+Get-ScheduledTask | Select TaskName,TaskPath,State,Author,Principal | Format-Table -AutoSize # Gets all scheduled tasks with security attributes - baseline for detecting malware persistence and unauthorized automation
+Get-ScheduledTask | Where-Object { $_.TaskPath -notlike '\Microsoft\Windows\*' } | Select TaskPath, TaskName, State # Filters to custom/non-Microsoft tasks - high-priority items for malware detection and persistence analysis

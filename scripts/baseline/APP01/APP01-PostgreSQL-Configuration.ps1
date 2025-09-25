@@ -1,0 +1,7 @@
+Get-CimInstance Win32_Process -Filter "Name='postgres.exe'" | Select ProcessId,ExecutablePath,CommandLine # Gets PostgreSQL process details - baseline for database service monitoring and process tampering detection
+type "C:\Program Files\PostgreSQL\17\data\postgresql.conf" | Select-String -Pattern "listen_addresses|port" # Gets network config from PostgreSQL conf - detects unauthorized network exposure and port changes
+type "C:\Program Files\PostgreSQL\17\data\pg_hba.conf" | Select-String -Pattern "host|local" # Gets authentication rules - monitors for weak auth methods and unauthorized access permissions
+Get-Service postgresql-x64-17 | Select-Object Name,Status,StartType # Gets PostgreSQL service status - baseline for database availability monitoring
+& "C:\Program Files\PostgreSQL\17\bin\psql.exe" --version # Gets PostgreSQL version - essential for vulnerability management and patch compliance
+Get-Content "C:\Program Files\PostgreSQL\17\data\postgresql.conf" | Where-Object { $_ -match '^(?!\s*#).*(listen_addresses|port)' } # Gets active network config excluding comments - validates secure network binding configuration
+Get-Content "C:\Program Files\PostgreSQL\17\data\pg_hba.conf" | Where-Object { $_ -match '^(?!\s*#).*(host|local)' } # Gets active auth rules excluding comments - critical for detecting weak authentication and unauthorized database access

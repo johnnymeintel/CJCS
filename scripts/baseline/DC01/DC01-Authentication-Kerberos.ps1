@@ -1,0 +1,2 @@
+Get-ADUser krbtgt -Property * | Select-Object Enabled,PasswordLastSet # Gets krbtgt account status and password age - critical for Golden Ticket attack detectio
+klist # Lists current Kerberos tickets - identifies suspicious ticket usage and potential Pass-the-Ticket attacks

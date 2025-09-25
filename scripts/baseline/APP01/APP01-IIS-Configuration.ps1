@@ -1,0 +1,4 @@
+Import-Module WebAdministration # Loads IIS management module for web server configuration queries
+Get-Website | Select-Object Name,State,PhysicalPath,Bindings # Gets all websites with bindings - complete web service inventory for attack surface analysis
+Get-WebBinding | Select hostHeader,protocol,BindingInformation # Gets web binding details - monitors for unauthorized virtual hosts and protocol configurations
+Get-WebBinding | Where-Object {$_.protocol -eq "https"} | Select bindingInformation,certificateHash,certificateStoreName # Gets HTTPS bindings and certificate info - validates SSL/TLS configuration and detects weak encryption

@@ -1,0 +1,2 @@
+Get-ItemProperty "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*" | Select-Object DisplayName,DisplayVersion,Publisher,InstallDate | Where-Object {$_.DisplayName} | Sort-Object DisplayName # Gets installed software inventory - baseline for unauthorized software detection and vulnerability management
+Get-HotFix | Sort-Object InstalledOn -Descending # Gets installed Windows updates sorted by date - baseline for patch management and vulnerability assessment

@@ -1,10 +1,15 @@
-# Cookie Jar Cloud Solutions (CJCS) - SOC Implementation Lab
+# Cookie Jar Cloud Solutions (CJCS) - part of the Cybersecurity Roleplay Challenge
 
 ## Project Overview
 
-Cookie Jar Cloud Solutions is a simulated mid-market restaurant SaaS company ($12.8M ARR, 67 employees) facing the reality that many growing businesses encounter: rapid expansion with no cybersecurity program. This homelab project documents the complete security transformation journey from "we don't even know what we don't know" to SOC 2 compliance readiness.
+This homelab project documents a complete security transformation journey from SaaS startup to SOC 2 compliance readiness, as part of the "Cybersecurity Roleplay Challenge". The challenge is a response to the current market dynamic in which entry-level cybersecurity candidates may be expected to possess experience they do not have, and skills which are beyond what is commonly described as "entry-level". The truth is, cybersecurity is not an entry-level field. As a computer scientist and security enthusiast, I have tasked myself with simulating the business impact of cybersecurity in addition to the technical implementation, in an effort to gain a comprehensive understanding and simulate the "experience" required for an entry level cybersecurity role. Every PowerShell script, every error message, every IP address - simulates real-world business impact within the CJCS narrative. 
 
-**Business Context:** CJCS provides inventory management and cost optimization software to restaurant chains across the Pacific Northwest. After a competitor breach exposed 200+ restaurants' data and customer security questionnaires started blocking sales deals, leadership finally allocated budget for cybersecurity infrastructure.
+**Business Context:** Cookie Jar Cloud Solutions is a simulated mid-market restaurant SaaS company ($12.8M ARR, 67 employees) facing the reality that many growing businesses encounter: rapid expansion with no cybersecurity program. CJCS provides inventory management and cost optimization software to restaurant chains across the Pacific Northwest. After a competitor breach exposed 200+ restaurants' data and customer security questionnaires started blocking sales deals, leadership finally allocated budget for cybersecurity infrastructure. 
+
+**CJCS Product Offering:** 
+```
+Under Construction
+```
 
 ## Architecture Overview
 
@@ -26,17 +31,17 @@ Cookie Jar Cloud Solutions is a simulated mid-market restaurant SaaS company ($1
 
 ## Project Phases
 
-### Phase 1: Baseline Assessment ✅
+### Phase 1: Baseline Assessment (In Progress)
 - **Security Posture:** Complete visibility gap - no monitoring, flat network, shared admin passwords
-- **Business Impact:** Failed security questionnaires blocking $300K in pipeline deals
-- **Risk Analysis:** Full domain admin compromise possible within minutes of initial access
+- **Business Impact:** Failed security questionnaires preventing adequate customer relationship growth 
+- **Risk Analysis:** Full domain admin compromise possible within minutes of initial access given current security configuration 
 
 ### Phase 2: SIEM Implementation 🚧
 - **Technology:** Wazuh manager with integrated ELK stack for log analysis and visualization
 - **Scope:** Windows event logs, system monitoring, and basic threat detection rules
 - **Challenge:** Balancing detection coverage with alert fatigue for a small team
 
-### Phase 3: Detection Engineering (In Progress)
+### Phase 3: Detection Engineering (Planned)
 - **MITRE ATT&CK Mapping:** Building detection rules for tactics most relevant to SMB environments
 - **Custom Rules:** Focusing on credential access, lateral movement, and data exfiltration scenarios
 - **Tuning:** Reducing false positives while maintaining sensitivity to actual threats
@@ -46,76 +51,11 @@ Cookie Jar Cloud Solutions is a simulated mid-market restaurant SaaS company ($1
 - **Automation:** Basic SOAR capabilities for initial triage and containment
 - **Business Integration:** Executive reporting and customer communication templates
 
-## Key Learning Objectives
-
-### Technical Skills
-- **SIEM Administration:** Wazuh deployment, configuration, and maintenance
-- **Detection Engineering:** Writing and tuning rules based on real attack patterns  
-- **Windows Security:** Advanced event log analysis and PowerShell forensics
-- **Linux Administration:** Ubuntu server management and ELK stack operations
-- **Network Security:** Segmentation planning and monitoring implementation
-
-### Business Skills
-- **Risk Communication:** Translating technical findings into business impact
-- **Compliance Mapping:** SOC 2 requirements and audit preparation
-- **Resource Planning:** Security budget allocation and staffing recommendations
-- **Vendor Management:** Security tool evaluation and procurement processes
-
 ## Repository Structure
 
 ```
-cjcs/
-├── docs/
-│   ├── business-context/          # Company background and threat landscape
-│   ├── architecture/              # Network diagrams and system specifications  
-│   ├── security-assessments/      # Baseline findings and risk analysis
-│   └── compliance/                # SOC 2 mapping and audit preparation
-├── configs/
-│   ├── wazuh/                     # SIEM configuration files and custom rules
-│   ├── windows/                   # Group policy and hardening templates
-│   └── network/                   # VirtualBox network configuration
-├── playbooks/
-│   ├── incident-response/         # Step-by-step procedures for common scenarios
-│   ├── threat-hunting/            # Manual investigation techniques
-│   └── business-continuity/       # Disaster recovery and backup procedures
-└── scripts/
-    ├── deployment/                # Automated VM provisioning and configuration
-    ├── monitoring/                # Health checks and maintenance automation
-    └── testing/                   # Attack simulation and detection validation
+Under Construction
 ```
-
-## Quick Start
-
-### Prerequisites
-- VirtualBox 7.0+ with Extension Pack
-- 32 GB RAM minimum (64 GB recommended)
-- 500 GB available storage
-- Windows Server 2022 and Ubuntu 22.04 ISOs
-
-### Basic Setup
-1. **Network Configuration**
-   ```bash
-   # Create host-only network
-   VBoxManage hostonlyif create
-   VBoxManage hostonlyif ipconfig vboxnet0 --ip 192.168.100.1 --netmask 255.255.255.0
-   ```
-
-2. **Domain Controller (DC01)**
-   - Install Windows Server 2022 with Desktop Experience
-   - Configure Active Directory Domain Services
-   - Set up DNS and DHCP services
-   - Create domain: `cjcs.local`
-
-3. **SIEM Server (SIEM01)**
-   - Install Ubuntu Server 22.04
-   - Deploy Wazuh all-in-one installation
-   - Configure Windows agent deployment
-   - Import custom detection rules
-
-4. **Application Server (APP01)**
-   - Join to domain and configure IIS
-   - Install Wazuh agent and configure log forwarding
-   - Deploy sample restaurant management application
 
 ## Real-World Applications
 
@@ -129,8 +69,8 @@ This lab environment simulates security challenges commonly faced by growing SMB
 ## Progress Tracking
 
 - [x] Initial infrastructure deployment
-- [x] Baseline security assessment 
-- [x] Wazuh SIEM installation and configuration
+- [ ] Baseline security assessment 
+- [ ] Wazuh SIEM installation and configuration
 - [ ] Custom detection rule development
 - [ ] Incident response playbook creation
 - [ ] SOC 2 compliance gap analysis
@@ -145,4 +85,4 @@ Cybersecurity Professional | Seattle, WA
 🔗 [LinkedIn Profile](https://linkedin.com/in/johnnymeintel)
 
 ---
-*This project represents practical, hands-on experience with cybersecurity implementation in resource-constrained environments. All scenarios are based on real challenges faced by SMBs in their security maturity journey.*
+*This project represents practical, hands-on experience with cybersecurity implementation, all CJCS company data is entirely fictitious*

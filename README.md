@@ -33,7 +33,7 @@ Under Construction
 
 ### Phase 1: Baseline Assessment (In Progress)
 - **Security Posture:** Complete visibility gap - no monitoring, flat network, shared admin passwords
-- **Business Impact:** Failed security questionnaires preventing adaquate customer relationship growth 
+- **Business Impact:** Failed security questionnaires preventing adequate customer relationship growth 
 - **Risk Analysis:** Full domain admin compromise possible within minutes of initial access given current security configuration 
 
 ### Phase 2: SIEM Implementation 🚧

@@ -1,10 +1,15 @@
-# Cookie Jar Cloud Solutions (CJCS) - SOC Implementation Lab
+# Cookie Jar Cloud Solutions (CJCS) - part of the Cybersecurity Roleplay Challenge
 
 ## Project Overview
 
-Cookie Jar Cloud Solutions is a simulated mid-market restaurant SaaS company ($12.8M ARR, 67 employees) facing the reality that many growing businesses encounter: rapid expansion with no cybersecurity program. This homelab project documents the complete security transformation journey from "we don't even know what we don't know" to SOC 2 compliance readiness.
+This homelab project documents a complete security transformation journey from SaaS startup to SOC 2 compliance readiness, as part of the "Cybersecurity Roleplay Challenge". The challenge is a response to the current market dynamic in which entry-level cybersecurity candidates may be expected to possess experience they do not have, and skills which are beyond what is commonly described as "entry-level". The truth is, cybersecurity is not an entry-level field. As a computer scientist and security enthusiast, I have tasked myself with simulating the business impact of cybersecurity in addition to the technical implementation, in an effort to gain a comprehensive understanding and simulate the "experience" required for an entry level cybersecurity role. Every PowerShell script, every error message, every IP address - simulates a real-world business impact within the CJCS narrative. 
 
-**Business Context:** CJCS provides inventory management and cost optimization software to restaurant chains across the Pacific Northwest. After a competitor breach exposed 200+ restaurants' data and customer security questionnaires started blocking sales deals, leadership finally allocated budget for cybersecurity infrastructure.
+**Business Context:** Cookie Jar Cloud Solutions is a simulated mid-market restaurant SaaS company ($12.8M ARR, 67 employees) facing the reality that many growing businesses encounter: rapid expansion with no cybersecurity program. CJCS provides inventory management and cost optimization software to restaurant chains across the Pacific Northwest. After a competitor breach exposed 200+ restaurants' data and customer security questionnaires started blocking sales deals, leadership finally allocated budget for cybersecurity infrastructure. 
+
+**CJCS Product Offering:** 
+```
+Under Construction
+```
 
 ## Architecture Overview
 
@@ -28,8 +33,8 @@ Cookie Jar Cloud Solutions is a simulated mid-market restaurant SaaS company ($1
 
 ### Phase 1: Baseline Assessment (In Progress)
 - **Security Posture:** Complete visibility gap - no monitoring, flat network, shared admin passwords
-- **Business Impact:** Failed security questionnaires blocking $300K in pipeline deals
-- **Risk Analysis:** Full domain admin compromise possible within minutes of initial access
+- **Business Impact:** Failed security questionnaires preventing adaquate customer relationship growth 
+- **Risk Analysis:** Full domain admin compromise possible within minutes of initial access given current security configuration 
 
 ### Phase 2: SIEM Implementation 🚧
 - **Technology:** Wazuh manager with integrated ELK stack for log analysis and visualization

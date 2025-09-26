@@ -1,0 +1,173 @@
+Connection to 192.168.100.10 88 port [tcp/kerberos] succeeded!
+Connection to 192.168.100.10 53 port [tcp/domain] succeeded!
+Connection to 192.168.100.20 80 port [tcp/http] succeeded!
+Connection to 192.168.100.20 5432 port [tcp/postgresql] succeeded!
+Connection to 192.168.100.101 3389 port [tcp/ms-wbt-server] succeeded!
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> @192.168.100.10 dc01.cjcs.local A
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 42193
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4000
+;; QUESTION SECTION:
+;dc01.cjcs.local.		IN	A
+
+;; ANSWER SECTION:
+dc01.cjcs.local.	3600	IN	A	192.168.100.10
+
+;; Query time: 0 msec
+;; SERVER: 192.168.100.10#53(192.168.100.10) (UDP)
+;; WHEN: Fri Sep 26 03:01:00 UTC 2025
+;; MSG SIZE  rcvd: 60
+
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> @192.168.100.10 app01.cjcs.local A
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58214
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4000
+;; QUESTION SECTION:
+;app01.cjcs.local.		IN	A
+
+;; ANSWER SECTION:
+app01.cjcs.local.	1200	IN	A	192.168.100.20
+
+;; Query time: 0 msec
+;; SERVER: 192.168.100.10#53(192.168.100.10) (UDP)
+;; WHEN: Fri Sep 26 03:01:00 UTC 2025
+;; MSG SIZE  rcvd: 61
+
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> @192.168.100.10 win11-mgr1.cjcs.local A
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 43223
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4000
+;; QUESTION SECTION:
+;win11-mgr1.cjcs.local.		IN	A
+
+;; ANSWER SECTION:
+win11-mgr1.cjcs.local.	1200	IN	A	192.168.100.101
+
+;; Query time: 0 msec
+;; SERVER: 192.168.100.10#53(192.168.100.10) (UDP)
+;; WHEN: Fri Sep 26 03:01:00 UTC 2025
+;; MSG SIZE  rcvd: 66
+
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> @192.168.100.10 cjcs.local SOA
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52969
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4000
+;; QUESTION SECTION:
+;cjcs.local.			IN	SOA
+
+;; ANSWER SECTION:
+cjcs.local.		3600	IN	SOA	dc01.cjcs.local. hostmaster.cjcs.local. 118 900 600 86400 3600
+
+;; ADDITIONAL SECTION:
+dc01.cjcs.local.	3600	IN	A	192.168.100.10
+
+;; Query time: 0 msec
+;; SERVER: 192.168.100.10#53(192.168.100.10) (UDP)
+;; WHEN: Fri Sep 26 03:01:00 UTC 2025
+;; MSG SIZE  rcvd: 107
+
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.1-Ubuntu <<>> @192.168.100.10 _kerberos._tcp.cjcs.local SRV
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; WARNING: .local is reserved for Multicast DNS
+;; You are currently testing what happens when an mDNS query is leaked to DNS
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 15950
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4000
+;; QUESTION SECTION:
+;_kerberos._tcp.cjcs.local.	IN	SRV
+
+;; ANSWER SECTION:
+_kerberos._tcp.cjcs.local. 600	IN	SRV	0 100 88 dc01.cjcs.local.
+
+;; ADDITIONAL SECTION:
+dc01.cjcs.local.	3600	IN	A	192.168.100.10
+
+;; Query time: 0 msec
+;; SERVER: 192.168.100.10#53(192.168.100.10) (UDP)
+;; WHEN: Fri Sep 26 03:01:00 UTC 2025
+;; MSG SIZE  rcvd: 105
+
+tcp   LISTEN 0      128             0.0.0.0:1514       0.0.0.0:*          
+tcp   LISTEN 0      128             0.0.0.0:1515       0.0.0.0:*          
+               Local time: Fri 2025-09-26 03:01:00 UTC
+           Universal time: Fri 2025-09-26 03:01:00 UTC
+                 RTC time: Fri 2025-09-26 03:00:59
+                Time zone: Etc/UTC (UTC, +0000)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:41:a0:68 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.100.5/24 brd 192.168.100.255 scope global enp0s3
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a00:27ff:fe41:a068/64 scope link 
+       valid_lft forever preferred_lft forever
+3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:b2:34:55 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.3.15/24 metric 100 brd 10.0.3.255 scope global dynamic enp0s8
+       valid_lft 76263sec preferred_lft 76263sec
+    inet6 fd17:625c:f037:3:a00:27ff:feb2:3455/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 86312sec preferred_lft 14312sec
+    inet6 fe80::a00:27ff:feb2:3455/64 scope link 
+       valid_lft forever preferred_lft forever
+default via 10.0.3.2 dev enp0s8 proto dhcp src 10.0.3.15 metric 100 
+8.8.4.4 via 10.0.3.2 dev enp0s8 proto dhcp src 10.0.3.15 metric 100 
+8.8.8.8 via 10.0.3.2 dev enp0s8 proto dhcp src 10.0.3.15 metric 100 
+10.0.3.0/24 dev enp0s8 proto kernel scope link src 10.0.3.15 metric 100 
+10.0.3.2 dev enp0s8 proto dhcp scope link src 10.0.3.15 metric 100 
+192.168.100.0/24 dev enp0s3 proto kernel scope link src 192.168.100.5 
+               total        used        free      shared  buff/cache   available
+Mem:           7.8Gi       2.5Gi       2.7Gi       1.2Mi       2.8Gi       5.2Gi
+Swap:          4.0Gi          0B       4.0Gi
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              795M  1.1M  794M   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv   58G   18G   37G  33% /
+tmpfs                              3.9G   80K  3.9G   1% /dev/shm
+tmpfs                              5.0M     0  5.0M   0% /run/lock
+/dev/sda2                          2.0G  193M  1.6G  11% /boot
+CJCS                               465G  230G  236G  50% /media/sf_CJCS
+tmpfs                              795M   16K  795M   1% /run/user/1000
+ 03:01:00 up  2:49,  1 user,  load average: 0.04, 0.03, 0.00

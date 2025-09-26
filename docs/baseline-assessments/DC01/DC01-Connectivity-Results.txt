@@ -1,0 +1,516 @@
+﻿
+
+ComputerName     : app01.cjcs.local
+RemoteAddress    : 192.168.100.20
+RemotePort       : 80
+InterfaceAlias   : LAN
+SourceAddress    : 192.168.100.10
+TcpTestSucceeded : True
+
+ComputerName     : app01.cjcs.local
+RemoteAddress    : 192.168.100.20
+RemotePort       : 5432
+InterfaceAlias   : LAN
+SourceAddress    : 192.168.100.10
+TcpTestSucceeded : True
+
+ComputerName     : win11-mgr1.cjcs.local
+RemoteAddress    : 192.168.100.101
+RemotePort       : 3389
+InterfaceAlias   : LAN
+SourceAddress    : 192.168.100.10
+TcpTestSucceeded : True
+
+ComputerName     : siem01.cjcs.local
+RemoteAddress    : 192.168.100.5
+RemotePort       : 22
+InterfaceAlias   : LAN
+SourceAddress    : 192.168.100.10
+TcpTestSucceeded : True
+
+Server:  localhost
+Address:  127.0.0.1
+
+Name:    app01.cjcs.local
+Address:  192.168.100.20
+
+Server:  localhost
+Address:  127.0.0.1
+
+Name:    win11-mgr1.cjcs.local
+Address:  192.168.100.101
+
+Server:  localhost
+Address:  127.0.0.1
+
+Name:    siem01.cjcs.local
+Address:  192.168.100.5
+
+Server:  localhost
+Address:  127.0.0.1
+
+Name:    siem01.cjcs.local
+Address:  192.168.100.5
+
+Get list of DCs in domain 'cjcs.local' from '\\DC01.cjcs.local'.
+    DC01.cjcs.local [PDC]  [DS] Site: CJCS-Web
+The command completed successfully
+Leap Indicator: 0(no warning)
+Stratum: 1 (primary reference - syncd by radio clock)
+Precision: -23 (119.209ns per tick)
+Root Delay: 0.0000000s
+Root Dispersion: 10.0000000s
+ReferenceId: 0x4C4F434C (source name:  "LOCL")
+Last Successful Sync Time: 9/25/2025 4:18:23 PM
+Source: Local CMOS Clock
+Poll Interval: 6 (64s)
+
+
+
+
+Name      Status
+----      ------
+ADWS     Running
+DNS      Running
+KDC      Running
+Netlogon Running
+
+
+
+
+Repadmin: running command /showrepl against full DC localhost
+
+CJCS-Web\DC01
+
+DSA Options: IS_GC 
+
+Site Options: (none)
+
+DSA object GUID: 73961ef4-b8ec-4cbe-941e-2dc9d1946fbb
+
+DSA invocationID: 73961ef4-b8ec-4cbe-941e-2dc9d1946fbb
+
+
+
+
+
+
+Directory Server Diagnosis
+
+
+Performing initial setup:
+
+   Trying to find home server...
+
+   * Verifying that the local machine DC01, is a Directory Server. 
+   Home Server = DC01
+
+   * Connecting to directory service on server DC01.
+
+   * Identified AD Forest. 
+   Collecting AD specific global data 
+   * Collecting site info.
+
+   Calling ldap_search_init_page(hld,CN=Sites,CN=Configuration,DC=cjcs,DC=local,LDAP_SCOPE_SUBTREE,(objectCategory=ntDSSiteSettings),.......
+   The previous call succeeded 
+   Iterating through the sites 
+   Looking at base site object: CN=NTDS Site Settings,CN=CJCS-Web,CN=Sites,CN=Configuration,DC=cjcs,DC=local
+   Getting ISTG and options for the site
+   * Identifying all servers.
+
+   Calling ldap_search_init_page(hld,CN=Sites,CN=Configuration,DC=cjcs,DC=local,LDAP_SCOPE_SUBTREE,(objectClass=ntDSDsa),.......
+   The previous call succeeded....
+   The previous call succeeded
+   Iterating through the list of servers 
+   Getting information for the server CN=NTDS Settings,CN=DC01,CN=Servers,CN=CJCS-Web,CN=Sites,CN=Configuration,DC=cjcs,DC=local 
+   objectGuid obtained
+   InvocationID obtained
+   dnsHostname obtained
+   site info obtained
+   All the info for the server collected
+   * Identifying all NC cross-refs.
+
+   * Found 1 DC(s). Testing 1 of them.
+
+   Done gathering initial info.
+
+
+Doing initial required tests
+
+   
+   Testing server: CJCS-Web\DC01
+
+      Starting test: Connectivity
+
+         * Active Directory LDAP Services Check
+         Determining IP4 connectivity 
+         * Active Directory RPC Services Check
+         ......................... DC01 passed test Connectivity
+
+
+
+Doing primary tests
+
+   
+   Testing server: CJCS-Web\DC01
+
+      Test omitted by user request: Advertising
+
+      Test omitted by user request: CheckSecurityError
+
+      Test omitted by user request: CutoffServers
+
+      Test omitted by user request: FrsEvent
+
+      Test omitted by user request: DFSREvent
+
+      Test omitted by user request: SysVolCheck
+
+      Test omitted by user request: KccEvent
+
+      Test omitted by user request: KnowsOfRoleHolders
+
+      Test omitted by user request: MachineAccount
+
+      Test omitted by user request: NCSecDesc
+
+      Test omitted by user request: NetLogons
+
+      Test omitted by user request: ObjectsReplicated
+
+      Test omitted by user request: OutboundSecureChannels
+
+      Test omitted by user request: Replications
+
+      Test omitted by user request: RidManager
+
+      Test omitted by user request: Services
+
+      Test omitted by user request: SystemLog
+
+      Test omitted by user request: Topology
+
+      Test omitted by user request: VerifyEnterpriseReferences
+
+      Test omitted by user request: VerifyReferences
+
+      Test omitted by user request: VerifyReplicas
+
+   
+      Starting test: DNS
+
+         
+
+         DNS Tests are running and not hung. Please wait a few minutes...
+
+         See DNS test in enterprise tests section for results
+         ......................... DC01 passed test DNS
+
+   
+   Running partition tests on : ForestDnsZones
+
+      Test omitted by user request: CheckSDRefDom
+
+      Test omitted by user request: CrossRefValidation
+
+   
+   Running partition tests on : DomainDnsZones
+
+      Test omitted by user request: CheckSDRefDom
+
+      Test omitted by user request: CrossRefValidation
+
+   
+   Running partition tests on : Schema
+
+      Test omitted by user request: CheckSDRefDom
+
+      Test omitted by user request: CrossRefValidation
+
+   
+   Running partition tests on : Configuration
+
+      Test omitted by user request: CheckSDRefDom
+
+      Test omitted by user request: CrossRefValidation
+
+   
+   Running partition tests on : cjcs
+
+      Test omitted by user request: CheckSDRefDom
+
+      Test omitted by user request: CrossRefValidation
+
+   
+   Running enterprise tests on : cjcs.local
+
+      Starting test: DNS
+
+         Test results for domain controllers:
+
+            
+            DC: DC01.cjcs.local
+
+            Domain: cjcs.local
+
+            
+
+                  
+               TEST: Authentication (Auth)
+                  Authentication test: Successfully completed
+                  
+               TEST: Basic (Basc)
+                  The OS
+
+                  Microsoft Windows Server 2022 Standard Evaluation (Service Pack level: 0.0)
+
+                  is supported.
+
+                  NETLOGON service is running
+
+                  kdc service is running
+
+                  DNSCACHE service is running
+
+                  DNS service is running
+
+                  DC is a DNS server
+
+                  Network adapters information:
+
+                  Adapter [00000001] Intel(R) PRO/1000 MT Desktop Adapter:
+
+                     MAC address is 08:00:27:36:96:B6
+                     IP Address is static 
+                     IP address: 192.168.100.10
+                     DNS servers:
+
+                        127.0.0.1 (dc01.cjcs.local.) [Valid]
+                        Warning:
+                        8.8.8.8 (<name unavailable>) [Invalid]
+                        Warning: adapter
+
+                        [00000001] Intel(R) PRO/1000 MT Desktop Adapter has
+
+                        invalid DNS server: 8.8.8.8 (<name unavailable>)
+
+                  The A host record(s) for this DC was found
+                  The SOA record for the Active Directory zone was found
+                  The Active Directory zone on this DC/DNS server was found primary
+                  Root zone on this DC/DNS server was not found
+                  
+               TEST: Forwarders/Root hints (Forw)
+                  Recursion is enabled
+                  Forwarders Information: 
+                     1.0.0.1 (<name unavailable>) [Valid] 
+                     1.1.1.1 (<name unavailable>) [Valid] 
+                  
+               TEST: Delegations (Del)
+                  Delegation information for the zone: cjcs.local.
+                     Delegated domain name: _msdcs.cjcs.local.
+                        DNS server: dc01.cjcs.local. IP:192.168.100.10 [Valid]
+                  
+               TEST: Dynamic update (Dyn)
+                  Test record dcdiag-test-record added successfully in zone cjcs.local
+                  Test record dcdiag-test-record deleted successfully in zone cjcs.local
+                  
+               TEST: Records registration (RReg)
+                  Network Adapter
+
+                  [00000001] Intel(R) PRO/1000 MT Desktop Adapter:
+
+                     Matching CNAME record found at DNS server 192.168.100.10:
+                     73961ef4-b8ec-4cbe-941e-2dc9d1946fbb._msdcs.cjcs.local
+
+                     Matching A record found at DNS server 192.168.100.10:
+                     DC01.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _ldap._tcp.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _ldap._tcp.d1bfe13d-7ac9-4b13-b295-7b11e277a1db.domains._msdcs.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _kerberos._tcp.dc._msdcs.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _ldap._tcp.dc._msdcs.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _kerberos._tcp.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _kerberos._udp.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _kpasswd._tcp.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _ldap._tcp.CJCS-Web._sites.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _kerberos._tcp.CJCS-Web._sites.dc._msdcs.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _ldap._tcp.CJCS-Web._sites.dc._msdcs.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _kerberos._tcp.CJCS-Web._sites.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _ldap._tcp.gc._msdcs.cjcs.local
+
+                     Matching A record found at DNS server 192.168.100.10:
+                     gc._msdcs.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _gc._tcp.CJCS-Web._sites.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _ldap._tcp.CJCS-Web._sites.gc._msdcs.cjcs.local
+
+                     Matching  SRV record found at DNS server 192.168.100.10:
+                     _ldap._tcp.pdc._msdcs.cjcs.local
+
+                     Warning: 
+                     Missing CNAME record at DNS server 8.8.8.8: 
+                     73961ef4-b8ec-4cbe-941e-2dc9d1946fbb._msdcs.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Warning: 
+                     Missing A record at DNS server 8.8.8.8:
+                     DC01.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _ldap._tcp.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _ldap._tcp.d1bfe13d-7ac9-4b13-b295-7b11e277a1db.domains._msdcs.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _kerberos._tcp.dc._msdcs.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _ldap._tcp.dc._msdcs.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _kerberos._tcp.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _kerberos._udp.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _kpasswd._tcp.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _ldap._tcp.CJCS-Web._sites.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _kerberos._tcp.CJCS-Web._sites.dc._msdcs.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _ldap._tcp.CJCS-Web._sites.dc._msdcs.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _kerberos._tcp.CJCS-Web._sites.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _ldap._tcp.gc._msdcs.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Warning: 
+                     Missing A record at DNS server 8.8.8.8:
+                     gc._msdcs.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _gc._tcp.CJCS-Web._sites.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _ldap._tcp.CJCS-Web._sites.gc._msdcs.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 8.8.8.8:
+                     _ldap._tcp.pdc._msdcs.cjcs.local
+                     [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+                     
+               Error: Record registrations cannot be found for all the network
+
+               adapters
+
+         
+         Summary of test results for DNS servers used by the above domain
+
+         controllers:
+
+         
+
+            DNS server: 8.8.8.8 (<name unavailable>)
+
+               1 test failure on this DNS server
+
+               Name resolution is not functional. _ldap._tcp.cjcs.local. failed on the DNS server 8.8.8.8
+               [Error details: 10051 (Type: Win32 - Description: A socket operation was attempted to an unreachable network.)]
+               
+            DNS server: 1.0.0.1 (<name unavailable>)
+
+               All tests passed on this DNS server
+
+               
+            DNS server: 1.1.1.1 (<name unavailable>)
+
+               All tests passed on this DNS server
+
+               
+            DNS server: 192.168.100.10 (dc01.cjcs.local.)
+
+               All tests passed on this DNS server
+
+               Name resolution is functional._ldap._tcp SRV record for the forest root domain is registered 
+               DNS delegation for the domain  _msdcs.cjcs.local. is operational on IP 192.168.100.10
+
+               
+         Summary of DNS test results:
+
+         
+                                            Auth Basc Forw Del  Dyn  RReg Ext
+            _________________________________________________________________
+            Domain: cjcs.local
+
+               DC01                         PASS WARN PASS PASS PASS FAIL n/a  
+         
+         ......................... cjcs.local failed test DNS
+
+      Test omitted by user request: LocatorCheck
+
+      Test omitted by user request: Intersite
+

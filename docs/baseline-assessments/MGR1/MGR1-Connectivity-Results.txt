@@ -1,0 +1,29 @@
+﻿True
+True
+True
+True
+CN=Marcus Chen,CN=Users,DC=cjcs,DC=local
+DNS request timed out.
+    timeout was 2 seconds.
+Server:  UnKnown
+Address:  192.168.100.10
+
+Name:    dc01.cjcs.local
+Address:  192.168.100.10
+
+DNS request timed out.
+    timeout was 2 seconds.
+Server:  UnKnown
+Address:  192.168.100.10
+
+Name:    app01.cjcs.local
+Address:  192.168.100.20
+
+DNS request timed out.
+    timeout was 2 seconds.
+Server:  UnKnown
+Address:  192.168.100.10
+
+Name:    siem01.cjcs.local
+Address:  192.168.100.5
+

@@ -1,0 +1,74 @@
+﻿
+
+ComputerName     : dc01.cjcs.local
+RemoteAddress    : 192.168.100.10
+RemotePort       : 88
+InterfaceAlias   : Ethernet
+SourceAddress    : 192.168.100.20
+TcpTestSucceeded : True
+
+ComputerName     : dc01.cjcs.local
+RemoteAddress    : 192.168.100.10
+RemotePort       : 389
+InterfaceAlias   : Ethernet
+SourceAddress    : 192.168.100.20
+TcpTestSucceeded : True
+
+ComputerName     : dc01.cjcs.local
+RemoteAddress    : 192.168.100.10
+RemotePort       : 53
+InterfaceAlias   : Ethernet
+SourceAddress    : 192.168.100.20
+TcpTestSucceeded : True
+
+ComputerName     : siem01.cjcs.local
+RemoteAddress    : 192.168.100.5
+RemotePort       : 1514
+InterfaceAlias   : Ethernet
+SourceAddress    : 192.168.100.20
+TcpTestSucceeded : True
+
+ComputerName     : siem01.cjcs.local
+RemoteAddress    : 192.168.100.5
+RemotePort       : 1515
+InterfaceAlias   : Ethernet
+SourceAddress    : 192.168.100.20
+TcpTestSucceeded : True
+
+True
+
+Status      : Running
+Name        : postgresql-x64-17
+DisplayName : postgresql-x64-17 - PostgreSQL Server 17
+
+True
+Flags: 30 HAS_IP  HAS_TIMESERV 
+Trusted DC Name \\DC01.cjcs.local 
+Trusted DC Connection Status Status = 0 0x0 NERR_Success
+The command completed successfully
+DNS request timed out.
+    timeout was 2 seconds.
+Server:  UnKnown
+Address:  192.168.100.10
+
+Name:    dc01.cjcs.local
+Address:  192.168.100.10
+
+DNS request timed out.
+    timeout was 2 seconds.
+Server:  UnKnown
+Address:  192.168.100.10
+
+Name:    win11-mgr1.cjcs.local
+Address:  192.168.100.101
+
+DNS request timed out.
+    timeout was 2 seconds.
+Server:  UnKnown
+Address:  192.168.100.10
+
+Name:    siem01.cjcs.local
+Address:  192.168.100.5
+
+
+

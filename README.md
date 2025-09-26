@@ -54,7 +54,30 @@ Under Construction
 ## Repository Structure
 
 ```
-Under Construction
+CJCS/
+├── 📄 README.md                          # Project overview and documentation
+├── 📁 configs/                           # Configuration templates and hardening guides
+│   └── 📁 wazuh/                        # SIEM platform configurations
+├── 📁 docs/                             # Assessment documentation and evidence
+│   └── 📁 baseline-assessments/         # System security posture documentation
+│       ├── 📁 APP01/                    # Web/Database server assessment results
+│       ├── 📁 DC01/                     # Domain controller assessment results  
+│       ├── 📁 MGR1/                     # Executive workstation assessment results
+│       └── 📁 SIEM01/                   # Security monitoring platform results
+├── 📁 playbooks/                        # Incident response and operational procedures
+│   └── 📁 incident-response/            # IR workflows and escalation procedures
+├── 📁 scripts/                          # Assessment and automation tooling
+│   └── 📁 baseline/                     # Security baseline assessment scripts
+│       ├── 📁 APP01/                    # PowerShell assessment scripts (12 modules)
+│       ├── 📁 DC01/                     # PowerShell assessment scripts (9 modules)
+│       ├── 📁 MGR1/                     # PowerShell assessment scripts (11 modules)
+│       └── 📁 SIEM01/                   # Bash assessment scripts (19 modules)
+└── 📁 writeups/                         # Executive summaries and technical analysis
+    └── 📁 baseline/                     # Baseline security assessment reports
+        ├── 📄 APP01-Baseline-Writeup.md
+        ├── 📄 DC01-Baseline-Writeup.md  
+        ├── 📄 MGR1-Baseline-Writeup.md
+        └── 📄 SIEM01-Baseline-Writeup.md
 ```
 
 ## Real-World Applications

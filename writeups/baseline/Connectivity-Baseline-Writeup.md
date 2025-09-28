@@ -1,8 +1,11 @@
 # CJCS - Network Connectivity Assessment – Cookie Jar Cloud Solutions
 
 **Target Infrastructure:** [All systems - DC01, APP01, WIN11-MGR1, SIEM01]  
+
 **Assessment Date:** 09-25-2025
+
 **Author:** John David Meintel Jr / Security Support Specialist for Cookie Jar Cloud Solutions  
+
 **Assessment Type:** Network connectivity validation and SIEM integration readiness
 
 ---

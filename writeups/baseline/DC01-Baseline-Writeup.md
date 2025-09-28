@@ -1,8 +1,11 @@
 ### 🏷 DC01 - Domain Controller - Baseline Security Assessment – Cookie Jar Cloud Solutions
 
 **Target Host:** [dc01.cjcs.local 192.168.100.10/24] 
+
 **Assessment Date:** 09/25/2025 
+
 **Author:** John David Meintel Jr / Security Support Specialist for Cookie Jar Cloud Solutions 
+
 **System Role:** Active Directory / DNS
 
 ---

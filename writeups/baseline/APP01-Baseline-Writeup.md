@@ -1,6 +1,9 @@
 ### 🏷 APP01 - Web/App Server + DB - Baseline Security Assessment – Cookie Jar Cloud Solutions
 
-**Target Host:** [app01.cjcs.local 192.168.100.20/24] **Assessment Date:** 09/25/2025 **Author:** John David Meintel Jr / Security Support Specialist for Cookie Jar Cloud Solutions **System Role:** IIS / PostgreSQL
+**Target Host:** [app01.cjcs.local 192.168.100.20/24] 
+**Assessment Date:** 09/25/2025 
+**Author:** John David Meintel Jr / Security Support Specialist for Cookie Jar Cloud Solutions 
+**System Role:** IIS / PostgreSQL
 
 ---
 

@@ -1,9 +1,13 @@
 ### 🏷 SIEM01 - Security Information & Event Management - Baseline Security Assessment – Cookie Jar Cloud Solutions
 
 **Target Host:** [siem01.cjcs.local 192.168.100.5/24] 
-**Assessment Date:** 09/23/2025 
+
+**Assessment Date:** 09/23/2025
+
 **Author:** John David Meintel Jr / Security Analyst for Cookie Jar Cloud Solutions 
+
 **System Role:** Log aggregation, data analysis for event management
+
 
 ---
 

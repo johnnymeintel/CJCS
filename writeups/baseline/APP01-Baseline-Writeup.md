@@ -1,8 +1,11 @@
 ### 🏷 APP01 - Web/App Server + DB - Baseline Security Assessment – Cookie Jar Cloud Solutions
 
 **Target Host:** [app01.cjcs.local 192.168.100.20/24] 
+
 **Assessment Date:** 09/25/2025 
+
 **Author:** John David Meintel Jr / Security Support Specialist for Cookie Jar Cloud Solutions 
+
 **System Role:** IIS / PostgreSQL
 
 ---
@@ -14,9 +17,13 @@
 **Primary Risk Vectors:**
 
 - **Web Application Exposure** - IIS pre-configuration lacks proper SSL enforcement and directory browsing restrictions, creating potential information disclosure risks.
+- 
 - **Database Access Controls** - PostgreSQL authentication rules currently aligned with basic database connectivity and lacks defense in depth.
+- 
 - **Attack Surface Expansion** - Multiple listening services (HTTP, HTTPS, PostgreSQL, SMB) still maintain initial configuration, increasing potential entry points for lateral movement.
-- **Patch Management Gaps** - Critical security updates missing for both IIS and PostgreSQL components increase vulnerability exploitation risk, expected of a newly provisioned environment,  unacceptable for production. 
+- 
+- **Patch Management Gaps** - Critical security updates missing for both IIS and PostgreSQL components increase vulnerability exploitation risk, expected of a newly provisioned environment,  unacceptable for production.
+- 
 - **Privileged Access Sprawl** - Local administrator group contains unnecessary accounts that could enable credential compromise escalation.
 
 **Compliance Impact:** Four SOC 2 control failures identified around data encryption (CC6.1), access controls (CC6.2), and system monitoring (CC7.1). Database encryption and web application security controls require immediate remediation before customer audits.
@@ -34,8 +41,11 @@
 **Focus Areas:**
 
 - **Web Application Security** - IIS configuration hardening and SSL/TLS implementation assessment
+- 
 - **Database Security** - PostgreSQL access controls, authentication methods, and encryption validation
+- 
 - **Network Services Exposure** - Attack surface analysis and firewall configuration review
+- 
 - **Privileged Access Management** - Local and domain administrator account monitoring and control validation
 
 **Evidence Location:** 14 PowerShell assessment scripts with comprehensive output results, providing baseline documentation for SIEM rule development and security monitoring.

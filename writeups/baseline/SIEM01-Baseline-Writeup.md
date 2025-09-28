@@ -38,10 +38,13 @@
 **Assessment Approach:** Standard security assessment using Linux command-line tools, focused on SIEM-specific security requirements and compliance readiness rather than general server setup
 
 **Focus Areas:** 
+
 • **SIEM Security** - Protecting the monitoring system itself from compromise 
+
 • **System Health** - Ensuring reliable log collection and analysis capabilities
 
 • **Compliance Prep** - Meeting SOC 2 requirements for security monitoring controls 
+
 • **Production Readiness** - Identifying what needs fixing before real-world deployment
 
 **Evidence Location:** 21 security assessment scripts with detailed results, providing clear documentation for remediation and future compliance audits

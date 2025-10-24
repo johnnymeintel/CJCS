@@ -1,0 +1,26 @@
+# Windows system files
+Thumbs.db
+desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Python / Jupyter (future-proofing)
+__pycache__/
+*.ipynb_checkpoints/
+
+# macOS system files
+.DS_Store
+
+# VS Code and IDE config
+.vscode/
+.idea/
+
+# Build / output directories
+dist/
+build/
+out/
+
+# Ignore large evidence exports if needed (uncomment when applicable)
+# 06_evidence/*.zip

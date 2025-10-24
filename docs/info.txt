@@ -1,6 +1,0 @@
-│   ├── 00_Company-Profile.md
-│   ├── 01_Strategy.md
-│   ├── 02_Architecture.md
-│   ├── 03_Baseline-Assessments/  # Raw assessment outputs
-│   ├── 04_Detection-Rules/       # Detection XMLs + documentation
-│   └── 05_Investigations/        # Markdown reports (like Writeup_1,2,3)

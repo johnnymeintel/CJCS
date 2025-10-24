@@ -1,3 +1,0 @@
-│   │   ├── password_spray.xml
-│   │   ├── malicious_powershell.xml
-│   │   └── credential_dumping.xml

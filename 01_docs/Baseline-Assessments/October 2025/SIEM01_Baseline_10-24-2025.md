@@ -18,8 +18,8 @@
 | **Kernel**                    | Linux 6.8.0-85-generic                                                                     | `uname -r`                                                               |
 | **Uptime**                    | 2 h 57 m                                                                                   | `uptime -p`                                                              |
 | **IP Address**                | enp0s3 - 192.168.100.5/24                                                                  | `ip addr show enp0s3`                                                    |
-| **NAT**                       | enp0s8 - 10.0.3.15/24                                                                      | `ip addr show enp0s8`                                                    |
-| **Default Route**             | enp0s8 - 10.0.3.2 metric 100                                                               | `ip route show default`                                                  |
+| **NAT**                       | enp0s8 - x.x.x.x/24                                                                      | `ip addr show enp0s8`                                                    |
+| **Default Route**             | enp0s8 - x.x.x.x metric 100                                                               | `ip route show default`                                                  |
 | **On-link Route**             | enp0s3 - 192.168.100.0/24                                                                  | `ip route show`                                                          |
 | **Firewall Status**           | Inactive                                                                                   | `sudo ufw status` or `sudo systemctl status ufw`                         |
 | **System Clock Synchronized** | Yes                                                                                        | `timedatectl status`                                                     |

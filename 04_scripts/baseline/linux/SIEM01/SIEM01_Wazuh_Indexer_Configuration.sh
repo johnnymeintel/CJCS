@@ -42,14 +42,14 @@ echo "✓ OpenSearch configuration backed up"
 # 2. Index Templates and Mappings
 # --------------------------------------------------------------
 echo "[*] Exporting index templates..."
-curl -s -u admin:admin -XGET "https://localhost:9200/_template/wazuh?pretty" > "$BASE_DIR/wazuh-index-template.json"
+curl -sk -u admin:YOURPASSWORDHERE "https://localhost:9200/_cat/templates?v" > "$BASE_DIR/wazuh-index-template.json"
 echo "✓ Index templates exported"
 
 # --------------------------------------------------------------
 # 3. Current Indices and Their Status
 # --------------------------------------------------------------
 echo "[*] Exporting current indices status..."
-curl -s -u admin:admin -XGET "https://localhost:9200/_cat/indices?v" > "$BASE_DIR/wazuh-indices-status.txt"
+curl -s -u admin:YOURPASSWORDHERE -XGET "https://localhost:9200/_cat/indices?v" > "$BASE_DIR/wazuh-indices-status.txt"
 echo "✓ Indices status exported"
 
 # --------------------------------------------------------------

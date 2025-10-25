@@ -23,7 +23,7 @@
 #    2025-10-23  Johnny Meintel  Launch
 # --------------------------------------------------------------
 #  Example :
-#    ./SIEM01_LogFlow_Verification.sh
+#    ./SIEM01_Log_Collection.sh
 # ==============================================================
 
 DATE=$(date +%Y-%m-%d)

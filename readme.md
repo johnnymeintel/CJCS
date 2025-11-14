@@ -50,7 +50,7 @@ Under Construction
 - **Risk:** Domain-admin compromise feasible within minutes of intrusion.
     
 
-### **Phase 2 – SIEM Implementation (In Progress)**
+### **Phase 2 – SIEM Implementation (✅ Complete)**
 
 - **Platform:** Wazuh Manager + OpenSearch + Dashboard.
     
@@ -93,41 +93,57 @@ Under Construction
 ---
 
 ## Repository Structure
-
 ```
 CJCS/
-├── 📄 README.md
+├── 01_docs/                      # Documentation and assessments
+│   ├── Baseline-Assessments/     # Security baseline reports
+│   │   ├── Launch/               # Initial infrastructure assessments
+│   │   └── October 2025/         # Monthly reassessments
+│   ├── Detection-Rules/          # Detection engineering documentation
+│   └── Investigations/           # Incident investigation writeups
 │
-├── 📁 detections/                      # Detection rules (XML / Sigma / MITRE mapped)
-│   └── 📁 windows/
-│       ├── password-spray.xml
-│       ├── credential-dumping.xml
-│       └── malicious-powershell.xml
+├── 02_detections/                # Detection rules (XML/Sigma/MITRE)
+│   ├── windows/                  # Windows detection rules
+│   │   ├── password-spray.xml
+│   │   ├── dc01-admin-logon.xml
+│   │   └── sysmon-lsass.xml
+│   └── linux/                    # Linux detection rules
 │
-├── 📁 attacks/                         # Detection validation and simulation scripts
-│   ├── password-spray/
-│   ├── lsass-dump/
-│   └── phishing-lab/
+├── 03_attacks/                   # Attack simulation scripts
+│   ├── password_spray/           # Credential attacks
+│   ├── lsass_dump/               # Memory extraction
+│   └── phishing_lab/             # Social engineering tests
 │
-├── 📁 docs/                            # Documentation and evidence
-│   ├── baseline-assessments/           # Raw host outputs and baselines
-│   ├── investigations/                 # Sysmon / 4625 / LSASS case studies
-│   ├── strategy.md                     # CJCS business + security alignment
-│   └── company-profile.md
+├── 04_scripts/                   # Automation and tooling
+│   ├── baseline/                 # Security assessment scripts
+│   │   ├── windows/              # PowerShell baseline collectors
+│   │   └── linux/                # Bash baseline collectors
+│   ├── detection-tests/          # Detection validation scripts
+│   └── utilities/                # Helper scripts and monitoring
 │
-├── 📁 scripts/                         # Assessment + automation tooling
-│   └── baseline/
-│       ├── APP01/
-│       ├── DC01/
-│       ├── MGR1/
-│       └── SIEM01/
+├── 05_playbooks/                 # Operational procedures
+│   ├── incident-response/        # IR workflows and runbooks
+│   └── detection-tuning/         # Rule optimization procedures
 │
-├── 📁 playbooks/                       # Incident response + operational workflows
-│   └── incident-response/
+├── 06_evidence/                  # Lab artifacts and proof-of-concept
+│   ├── screenshots/              # Visual documentation
+│   ├── sample-alerts/            # Example SIEM alerts
+│   └── system-states/            # Configuration snapshots
 │
-└── 📁 references/                      # Cheat sheets and supporting material
-    └── Wazuh-Cheat-Sheet.md
+└── 07_references/                # Learning resources
+    ├── cheat-sheets/             # Quick reference guides
+    └── study-notes/              # Technical documentation
 ```
+
+## Key Components
+
+**Detection Engineering:** 3 production-ready Wazuh rules targeting authentication attacks and privileged access abuse
+
+**Security Assessments:** Comprehensive baseline documentation across 4 systems (DC, App Server, Workstation, SIEM)
+
+**Automation:** 50+ PowerShell and Bash scripts for security assessments and monitoring
+
+**Documentation:** SOC 2 compliance-focused security program with business context (CJCS fictional scenario)
 
 ---
 

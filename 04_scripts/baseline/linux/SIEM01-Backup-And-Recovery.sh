@@ -1,0 +1,3 @@
+which rsync tar gzip 2>/dev/null || true                                      # check presence of backup/archiving tools
+grep -R --line-number -i backup /etc/cron* 2>/dev/null || echo "No backup cron jobs found"   # search system/user cron jobs for backup tasks
+df -h | egrep '(/backup|/home|/var)'                                          # report disk usage and free space on common backup or data directories

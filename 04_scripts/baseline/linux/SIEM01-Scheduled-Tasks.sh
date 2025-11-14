@@ -1,0 +1,3 @@
+ls -la /etc/cron.* 2>/dev/null                                                    # list system-wide cron job directories and their contents
+crontab -l 2>/dev/null || echo "No root crontab"                                  # check root’s personal crontab for scheduled jobs
+for u in $(cut -d: -f1 /etc/passwd); do crontab -u "$u" -l 2>/dev/null && echo "Crontab for $u found"; done   # enumerate per-user crontabs across system

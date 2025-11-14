@@ -1,0 +1,1 @@
+Get-WmiObject Win32_Service | Select-Object Name,DisplayName,State,StartMode,StartName,PathName | Sort-Object Name # Gets all Windows services with key security attributes - baseline for detecting rogue services and malware persistence mechanisms

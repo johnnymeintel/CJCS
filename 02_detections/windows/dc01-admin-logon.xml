@@ -1,0 +1,8 @@
+<group name="local,windows,audit,privileged_access">
+  <rule id="100010" level="12">
+    <if_sid>60000</if_sid>
+    <field name="win.eventdata.logonType">2</field>
+    <match>Administrator|CJCSAdmin|jmeintel|drodriguez</match>
+    <description>CRITICAL: Privileged Account Logon to DC01 (SOC 2 CC7.1)</description>
+  </rule>
+</group>

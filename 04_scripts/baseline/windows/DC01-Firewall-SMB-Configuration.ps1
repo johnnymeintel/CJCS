@@ -1,0 +1,3 @@
+Get-NetFirewallProfile # Gets Windows firewall profile settings - baseline for firewall policy enforcement and security posture assessment
+Get-NetFirewallRule -PolicyStore ActiveStore | Select-Object Name,DisplayName,Direction,Action,Enabled,Profile # Lists active firewall rules - detects unauthorized rule changes and security policy violations
+Get-SmbServerConfiguration | Select-Object EnableSMB1Protocol,EnableSMB2Protocol,RequireSecuritySignature # Gets SMB config including vulnerable SMBv1 status - critical for lateral movement prevention

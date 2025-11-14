@@ -1,0 +1,3 @@
+Get-DnsServerForwarder # Gets DNS forwarder config - monitors for unauthorized DNS redirects and potential data exfiltration
+Get-DnsServerZone | Select-Object ZoneName,ZoneType,IsDsIntegrated,IsAutoCreated # Lists DNS zones and integration status - baseline for detecting rogue zones
+Get-DnsServerResourceRecord -ZoneName "cjcs.local" # Gets DNS records for specific zone - establishes baseline for DNS hijacking detection

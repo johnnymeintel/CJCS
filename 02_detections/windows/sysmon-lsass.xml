@@ -1,0 +1,7 @@
+<Sysmon schemaversion="4.90">
+  <EventFiltering>
+    <ProcessAccess onmatch="include">
+      <TargetImage condition="end with">lsass.exe</TargetImage>
+    </ProcessAccess>
+  </EventFiltering>
+</Sysmon>

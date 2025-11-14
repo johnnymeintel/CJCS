@@ -1,0 +1,1 @@
+Get-HotFix | Sort-Object InstalledOn -Descending # Gets installed Windows updates sorted by date - baseline for patch management and vulnerability assessment

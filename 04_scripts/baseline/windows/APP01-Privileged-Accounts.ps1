@@ -1,0 +1,3 @@
+Get-LocalGroupMember -Group "Administrators" | Select-Object Name,PrincipalSource,ObjectClass # Gets local administrators - critical for privileged access monitoring and unauthorized elevation detection
+Import-Module ActiveDirectory # Loads AD module for domain queries
+Get-ADGroupMember -Identity "Domain Admins" -Recursive | Select Name,sAMAccountName # Gets Domain Admin members recursively - monitors highest privilege accounts for compromise indicators

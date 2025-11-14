@@ -1,0 +1,1 @@
+1..5 | ForEach-Object { net use \\localhost\C$ /user:"SprayUser$_" wrongpass }

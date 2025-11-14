@@ -1,0 +1,4 @@
+$since = (Get-Date).AddDays(-1) # Sets 24-hour lookback period for event log analysis - standard timeframe for incident response and anomaly detection
+Get-WinEvent -FilterHashtable @{LogName='System';StartTime=$since} -MaxEvents 500 | Select TimeCreated,Id,LevelDisplayName,ProviderName,Message # Gets recent System events - monitors for service failures, hardware issues, and system-level security events
+Get-WinEvent -FilterHashtable @{LogName='Application';StartTime=$since} -MaxEvents 500 | Select TimeCreated,Id,LevelDisplayName,ProviderName,Message # Gets recent Application events - detects software crashes, errors, and potential application-layer attacks
+Get-WinEvent -FilterHashtable @{LogName='Security';StartTime=$since} -MaxEvents 500 | Select TimeCreated,Id,LevelDisplayName,ProviderName,Message # Gets recent Security events - critical for authentication monitoring, privilege escalation, and breach detection
